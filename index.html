@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>McGowan Muaythai Strategic Handbook | SWOT • PESTLE • ANSOFF</title>
 
+  <!-- Tailwind (safe on GitHub Pages) -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* NEW GREEN BACKGROUND COLOURS */
+      /* GREEN BACKGROUND (safe contrast) */
       --bg: #061712;        /* deep forest green */
-      --bg2: #0b2a20;       /* slightly lighter emerald tone */
+      --bg2: #0b2a20;       /* slightly lighter emerald */
 
       --text: #fff;
       --muted: rgba(255,255,255,0.70);
@@ -33,13 +35,10 @@
     body{
       margin:0;
       color: var(--text);
-
-      /* GREEN GRADIENT BACKGROUND */
       background:
         radial-gradient(1200px 800px at 20% 10%, #0f3d2e 0%, transparent 55%),
         radial-gradient(900px 650px at 85% 30%, #0c3428 0%, transparent 55%),
         linear-gradient(135deg, var(--bg) 0%, var(--bg2) 55%, var(--bg) 100%);
-
       font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       line-height: 1.45;
     }
@@ -73,7 +72,6 @@
       gap: 2px;
       min-width: 220px;
     }
-
     .brand strong{ font-size: 14px; letter-spacing: 0.3px; }
     .brand span{ font-size: 12px; color: var(--muted); }
 
@@ -83,7 +81,6 @@
       flex-wrap: wrap;
       justify-content: flex-end;
     }
-
     .nav a{
       font-size: 12px;
       font-weight: 800;
@@ -102,12 +99,10 @@
     .hero{
       padding: 18px 0 10px;
     }
-
     .hero h1{
       font-size: 26px;
       margin: 0 0 6px;
     }
-
     .hero p{
       margin: 0;
       color: var(--muted);
@@ -163,7 +158,6 @@
       font-weight: 800;
       cursor: pointer;
     }
-
     .btn:active{ transform: translateY(1px); }
 
     .grid{
@@ -171,7 +165,6 @@
       grid-template-columns: 1fr;
       gap: 12px;
     }
-
     @media (min-width: 900px){
       .grid.two{ grid-template-columns: 1fr 1fr; }
     }
@@ -213,7 +206,6 @@
       flex-shrink: 0;
       opacity: 0.85;
     }
-
     .card.open .chev{ transform: rotate(180deg); }
 
     .card-body{
@@ -221,22 +213,22 @@
       padding: 0 16px 16px;
       border-top: 1px solid rgba(255,255,255,0.10);
     }
-
-    .card.open .card-body{
-      display:block;
-      padding-top: 12px;
-    }
+    .card.open .card-body{ display:block; padding-top: 12px; }
 
     .list{
       margin: 0;
       padding-left: 18px;
       color: rgba(255,255,255,0.92);
     }
+    .list li{ margin: 8px 0; font-size: 13px; }
 
-    .list li{
-      margin: 8px 0;
-      font-size: 13px;
-    }
+    /* PESTLE accents */
+    .p-political{ border-left: 5px solid #f59e0b; }
+    .p-economic{ border-left: 5px solid #9ca3af; }
+    .p-social{ border-left: 5px solid #ec4899; }
+    .p-tech{ border-left: 5px solid #a78bfa; }
+    .p-legal{ border-left: 5px solid #38bdf8; }
+    .p-env{ border-left: 5px solid #34d399; }
 
     footer{
       margin-top: 34px;
@@ -248,7 +240,6 @@
 </head>
 
 <body>
-
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">
@@ -269,19 +260,309 @@
       <p>SWOT → PESTLE → ANSOFF on one page, designed for a one-time live walkthrough.</p>
     </section>
 
-    <!-- YOUR EXISTING CONTENT REMAINS BELOW THIS POINT -->
-    <!-- (No structural changes — only background adjusted) -->
+    <!-- =======================
+         1) SWOT
+    ======================== -->
+    <section id="swot" class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <div class="badge">📊</div>
+          <div>
+            <h2>SWOT Analysis</h2>
+            <div class="subtitle">Tap a card to expand details</div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-expand-all="swot">Expand all</button>
+          <button class="btn" data-collapse-all="swot">Collapse all</button>
+        </div>
+      </div>
 
+      <div class="grid two" data-group="swot">
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>💪 Strengths <small>Internal competitive advantages</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Rapid Organic Growth</strong> — 0 to 120 members (2023–2026) signals strong product-market fit and sustainable grassroots positioning without paid advertising.</li>
+              <li><strong>Elite Brand Positioning</strong> — National, European, and World champions create reputational capital and a local competitive moat (only 2–3 main competitors).</li>
+              <li><strong>High Digital Engagement</strong> — ~150,000 Instagram profile views monthly without paid ads indicates strong awareness efficiency and untapped monetisation potential.</li>
+              <li><strong>Strong Retention &amp; Conversion</strong> — Pay-as-you-go to membership conversion with 6+ month retention reduces acquisition pressure and stabilises revenue.</li>
+              <li><strong>Cost-Lean Coaching Structure</strong> — 5 coaches via membership exchange creates high margins (short-term) and reduced payroll burden.</li>
+              <li><strong>Tiered Pricing Strategy</strong> — Three membership tiers enable market penetration, upsell opportunities, and price discrimination.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>⚠️ Weaknesses <small>Internal limitations</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Physical Capacity Constraint</strong> — 40–45 members per class plus a 13:00–16:45 operational gap creates a revenue ceiling and growth bottleneck.</li>
+              <li><strong>Revenue Concentration Risk</strong> — ~£79k annual revenue is heavily reliant on memberships/classes with no PT, merchandise, sponsorship, digital products, or seminars.</li>
+              <li><strong>Informal Employment Model</strong> — Unpaid “exchange” coaching risks legal compliance, burnout, inconsistent quality, and limits scalability.</li>
+              <li><strong>No Paid Marketing</strong> — Zero ad spend and few structured partnerships (schools, councils, corporate wellness) reduces planned expansion.</li>
+              <li><strong>Limited Women’s Offering</strong> — Competitors offer women-only sessions; the absence is a missed penetration opportunity.</li>
+              <li><strong>Infrastructure Investment Lag</strong> — Limited upgrades plus rising utility costs can undermine premium/elite brand perception.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🚀 Opportunities <small>External leverage points</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Women’s Combat Sport Growth</strong> — Women-only Muay Thai classes, beginner pathways, and self-defence workshops unlock new revenue.</li>
+              <li><strong>Digital Monetisation</strong> — Under-monetised social reach supports online programming, digital memberships, fight-camp education, merch, and seminars.</li>
+              <li><strong>Facility Expansion &amp; Schedule Optimisation</strong> — Demand is validated; adding early morning/lunch sessions or exploring a second site becomes feasible.</li>
+              <li><strong>Corporate &amp; Institutional Partnerships</strong> — School anti-bullying programmes, corporate team-building, and council-funded youth engagement diversify income.</li>
+              <li><strong>Combat Sports Macro Growth</strong> — Rising MMA/boxing/functional conditioning adoption supports Muay Thai positioning in high-intensity fitness trends.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🛡️ Threats <small>External risks</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Competitive Imitation</strong> — Competitors can copy pricing, women-only classes, timetables; may increase paid marketing and target beginners.</li>
+              <li><strong>Economic Pressure &amp; Cost Inflation</strong> — Rising overhead plus constrained discretionary spending increases churn risk (gym memberships are elastic).</li>
+              <li><strong>Regulatory &amp; Employment Risk</strong> — Unpaid coaching models may conflict with labour regulations and create liability exposure.</li>
+              <li><strong>Capacity Ceiling Profit Plateau</strong> — Without structural expansion, revenue optimisation is capped by class capacity.</li>
+              <li><strong>Founder Dependency Risk</strong> — Brand equity is strongly linked to founder reputation; injury/relocation could impact demand significantly.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================
+         2) PESTLE
+    ======================== -->
+    <section id="pestle" class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <div class="badge">🧭</div>
+          <div>
+            <h2>PESTLE Analysis</h2>
+            <div class="subtitle">Macro-environment factors</div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-expand-all="pestle">Expand all</button>
+          <button class="btn" data-collapse-all="pestle">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="grid" data-group="pestle">
+        <article class="card p-political">
+          <button class="card-btn" type="button">
+            <div>Political <small>Funding, policy, planning, regulation</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Sports funding &amp; grants</strong> — UK Sport lottery funding and Sport England grants may support community initiatives and facility development (often £10–50k range).</li>
+              <li><strong>Youth programme funding</strong> — Potential subsidised funding through Sport England Active Partnerships.</li>
+              <li><strong>Local planning &amp; zoning</strong> — Expansion can require planning permission; delays of 3–6 months are common and “change of use” may trigger reviews.</li>
+              <li><strong>Anti-bullying &amp; youth policy</strong> — School/mental health initiatives create opportunities for resilience/anti-bullying programme revenue and referrals (including council pathways).</li>
+              <li><strong>Regulation &amp; licensing</strong> — Coach certification/licensing requirements evolve; governing body standards increasingly influence legitimacy and insurance.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-economic">
+          <button class="card-btn" type="button">
+            <div>Economic <small>Spending, costs, wages, rates</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Cost of living pressure</strong> — Discretionary spending drops increase churn risk; members may downgrade tiers or pause memberships.</li>
+              <li><strong>Energy &amp; utilities</strong> — Rising electricity/gas costs squeeze margins; mitigation includes LED upgrades, HVAC optimisation, and insulation.</li>
+              <li><strong>Wage inflation</strong> — Higher wage floors and recruitment costs increase pressure to formalise staff arrangements and manage compliance.</li>
+              <li><strong>Currency weakness</strong> — Higher import costs for equipment; can affect international sponsorship value and expansion pricing strategy.</li>
+              <li><strong>Interest rates</strong> — Higher borrowing costs raise ROI hurdle rates; encourages organic growth or phased expansion over debt-heavy projects.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-social">
+          <button class="card-btn" type="button">
+            <div>Social <small>Trends, demographics, community</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Rising female participation</strong> — Strong growth in women’s sport participation supports women-only classes and beginner pathways.</li>
+              <li><strong>Mental health &amp; wellness</strong> — Fitness as stress relief is mainstream; Muay Thai can be positioned as resilience and wellbeing.</li>
+              <li><strong>Community preference</strong> — Gen Z/Millennials increasingly prefer authentic, founder-led, community-driven brands vs big-box gyms.</li>
+              <li><strong>Diversity &amp; inclusion</strong> — Inclusive and accessible positioning (including women’s provision) increasingly expected.</li>
+              <li><strong>Social media influence</strong> — Instagram/TikTok drive gym choices; strong organic reach supports UGC and micro-influencer partnerships.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-tech">
+          <button class="card-btn" type="button">
+            <div>Technological <small>Platforms, streaming, AI, data</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Digital booking &amp; memberships</strong> — Platforms (eg Mindbody/Zen Planner) support booking, payments, retention analytics, and churn prediction.</li>
+              <li><strong>Streaming &amp; on-demand</strong> — Create a technique library (drills/combos/conditioning) and fight-camp education content for global reach.</li>
+              <li><strong>AI personalisation</strong> — Chatbots for FAQs/booking/billing; predictive analytics for churn risk and targeted retention campaigns.</li>
+              <li><strong>Wearables integration</strong> — Data-driven tracking (Apple Watch/Oura/Whoop/Fitbit) supports premium coaching and gamification.</li>
+              <li><strong>Social commerce</strong> — Instagram/TikTok shop + Shopify supports merch and passive revenue from the existing audience.</li>
+              <li><strong>Cybersecurity &amp; privacy</strong> — GDPR/PCI compliance and vendor due diligence reduce data breach and regulatory risk.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-legal">
+          <button class="card-btn" type="button">
+            <div>Legal <small>Employment, HSE, GDPR, safeguarding</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Employment law &amp; minimum wage</strong> — Unpaid exchange coaching arrangements may be non-compliant and create back-pay / enforcement risk.</li>
+              <li><strong>Health &amp; safety</strong> — Risk assessments, incident reporting, first aid training, informed consent and emergency protocols are essential.</li>
+              <li><strong>Combat sports governance</strong> — Coach accreditation and governing body affiliation increasingly influence insurance requirements.</li>
+              <li><strong>Data protection</strong> — UK GDPR compliance requires privacy policies, secure storage, and breach response procedures.</li>
+              <li><strong>Safeguarding &amp; DBS</strong> — Youth programmes require safeguarding policy, named officer, and DBS checks where relevant.</li>
+              <li><strong>IP protection</strong> — Brand/trademark registration protects name/logo and supports long-term valuation and franchising potential.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-env">
+          <button class="card-btn" type="button">
+            <div>Environmental <small>Energy, resilience, sustainability</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Energy efficiency</strong> — Upgrades like LED and HVAC optimisation cut running costs and support ESG expectations of partners.</li>
+              <li><strong>Climate resilience</strong> — Flooding and extreme weather can disrupt operations; business continuity planning and insurance mitigate risk.</li>
+              <li><strong>Sustainable supply chain</strong> — Eco-friendly equipment and merch can differentiate and satisfy corporate procurement expectations.</li>
+              <li><strong>Waste &amp; plastics reduction</strong> — Recycling and reduced single-use plastics align with ESG and cost-saving initiatives.</li>
+              <li><strong>Green building standards</strong> — Certifications (eg BREEAM) can support premium positioning, especially for major renovations.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================
+         3) ANSOFF
+    ======================== -->
+    <section id="ansoff" class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <div class="badge">📈</div>
+          <div>
+            <h2>ANSOFF Matrix</h2>
+            <div class="subtitle">Growth strategy quadrants</div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-expand-all="ansoff">Expand all</button>
+          <button class="btn" data-collapse-all="ansoff">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="grid two" data-group="ansoff">
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🎯 Market Penetration <small>Existing services → existing market</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Intensify local marketing</strong> — Targeted Instagram campaigns, Google Business Profile optimisation, local SEO, and community event sponsorships.</li>
+              <li><strong>Launch sign-up promotions</strong> — First month discounts, referral incentives, trial weeks to convert PAYG into committed tiers.</li>
+              <li><strong>Strengthen retention</strong> — Progression tracking, loyalty rewards, consistency recognition, and community-building to reduce churn.</li>
+              <li><strong>Expand flexibility</strong> — Off-peak rates, drop-in passes, bundles, and premium full-access tiers to capture different budgets/availability.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🌍 Market Development <small>Existing services → new markets</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Online/hybrid platform</strong> — Remote coaching, live technique classes, conditioning programmes, nutrition support, and performance analysis.</li>
+              <li><strong>Niche targeting</strong> — Women-only classes, youth/teens, fitness-first (non-competitive) clients, and specialist segments.</li>
+              <li><strong>Corporate wellness partnerships</strong> — Workplace wellbeing contracts, team-building combat-fitness sessions, resilience seminars.</li>
+              <li><strong>Satellite expansion</strong> — Pop-up studios or nearby town branches, potentially via franchising/partners to reduce capital burden.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🛠️ Product/Service Development <small>New services → existing market</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Strength &amp; conditioning specialisation</strong> — Dedicated S&amp;C, mobility/recovery, fighter prep, injury prevention workshops.</li>
+              <li><strong>Workshops &amp; seminars</strong> — Fight-camp intensives, performance testing, injury prevention clinics, readiness assessments.</li>
+              <li><strong>Wellness &amp; recovery tier</strong> — Yoga/mobility, stretching, recovery coaching to widen appeal beyond fighters.</li>
+              <li><strong>Digital tools &amp; member app</strong> — Booking, training logs, video library, member portal for premium convenience and insight.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🚀 Diversification <small>New services → new markets</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li><strong>Global online coaching brand</strong> — Remote S&amp;C, nutrition, fight-camp coaching, consulting for international audiences.</li>
+              <li><strong>Merchandise &amp; e-commerce</strong> — Apparel, gloves, wraps, pads, recovery gear via Shopify plus Instagram Shopping.</li>
+              <li><strong>Events, camps &amp; retreats</strong> — Intensives, weekend camps, retreats, international training tours for premium revenue.</li>
+              <li><strong>Tactical &amp; security partnerships</strong> — Bespoke training for law enforcement/security with resilience and decision-making focus.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <footer>
+        Tip: Share the GitHub Pages link. People can open it on their phone and tap along as you talk.
+      </footer>
+    </section>
   </main>
 
   <script>
+    // Toggle a single card
     document.addEventListener("click", (e) => {
       const btn = e.target.closest(".card-btn");
       if (!btn) return;
+
       const card = btn.closest(".card");
       card.classList.toggle("open");
     });
 
+    // Expand/collapse all within a group
     function setGroup(groupName, open) {
       const group = document.querySelector(`[data-group="${groupName}"]`);
       if (!group) return;
@@ -297,6 +578,5 @@
       btn.addEventListener("click", () => setGroup(btn.dataset.collapseAll, false));
     });
   </script>
-
 </body>
 </html>
