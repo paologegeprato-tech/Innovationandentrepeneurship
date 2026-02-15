@@ -5,50 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>McGowan Muaythai Strategic Handbook | SWOT • PESTLE • ANSOFF</title>
 
+  <!-- Optional: Tailwind (safe on GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <!-- Optional fonts (safe) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Calibri:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    /* -----------------------------
-       Global / Layout
-    ----------------------------- */
     :root{
       --bg: #0b1220;
       --bg2: #111b2e;
+      --text: #fff;
+      --muted: rgba(255,255,255,0.70);
       --card: rgba(255,255,255,0.06);
-      --cardBorder: rgba(255,255,255,0.10);
-      --text: #ffffff;
-      --muted: rgba(255,255,255,0.65);
-      --link: #93c5fd;
+      --border: rgba(255,255,255,0.12);
       --shadow: 0 18px 40px -16px rgba(0,0,0,0.55);
       --radius: 18px;
       --maxw: 1100px;
+      --link: #93c5fd;
     }
 
-    *{ box-sizing:border-box; }
-    html, body { height:100%; }
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
     body{
       margin:0;
       color: var(--text);
-      background: radial-gradient(1200px 800px at 20% 10%, #152a54 0%, transparent 55%),
-                  radial-gradient(900px 650px at 85% 30%, #2a1747 0%, transparent 55%),
-                  linear-gradient(135deg, var(--bg) 0%, var(--bg2) 55%, var(--bg) 100%);
-      font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 800px at 20% 10%, #152a54 0%, transparent 55%),
+        radial-gradient(900px 650px at 85% 30%, #2a1747 0%, transparent 55%),
+        linear-gradient(135deg, var(--bg) 0%, var(--bg2) 55%, var(--bg) 100%);
+      font-family: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       line-height: 1.45;
     }
 
     a{ color: var(--link); text-decoration: none; }
     a:hover{ text-decoration: underline; }
 
-    .wrap{
-      max-width: var(--maxw);
-      margin: 0 auto;
-      padding: 18px 14px 70px;
-    }
-
     .topbar{
       position: sticky;
       top: 0;
       z-index: 50;
       backdrop-filter: blur(10px);
-      background: rgba(10,16,28,0.65);
+      background: rgba(10,16,28,0.70);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .topbar-inner{
@@ -59,21 +59,16 @@
       gap: 12px;
       align-items:center;
       justify-content: space-between;
+      flex-wrap: wrap;
     }
     .brand{
       display:flex;
       flex-direction: column;
       gap: 2px;
-      min-width: 180px;
+      min-width: 220px;
     }
-    .brand strong{
-      font-size: 14px;
-      letter-spacing: 0.3px;
-    }
-    .brand span{
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .brand strong{ font-size: 14px; letter-spacing: 0.3px; }
+    .brand span{ font-size: 12px; color: var(--muted); }
 
     .nav{
       display:flex;
@@ -83,18 +78,33 @@
     }
     .nav a{
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
       padding: 8px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid var(--border);
       background: rgba(255,255,255,0.06);
     }
 
-    .section{
-      margin-top: 26px;
-      padding-top: 10px;
+    .wrap{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 18px 14px 70px;
     }
 
+    .hero{
+      padding: 18px 0 10px;
+    }
+    .hero h1{
+      font-size: 26px;
+      margin: 0 0 6px;
+    }
+    .hero p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section{ margin-top: 26px; padding-top: 10px; }
     .section-head{
       display:flex;
       align-items:flex-end;
@@ -119,22 +129,10 @@
       flex-shrink: 0;
       font-size: 18px;
     }
-    h1,h2,h3{ margin:0; }
-    h2{
-      font-size: 22px;
-      letter-spacing: 0.2px;
-    }
-    .subtitle{
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
+    h2{ margin:0; font-size: 22px; letter-spacing: 0.2px; }
+    .subtitle{ font-size: 13px; color: var(--muted); margin-top: 4px; }
 
-    .controls{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .controls{ display:flex; gap: 10px; flex-wrap: wrap; }
     .btn{
       border: 1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.08);
@@ -147,8 +145,362 @@
     }
     .btn:active{ transform: translateY(1px); }
 
-    /* -----------------------------
-       Expand cards (SWOT / ANSOFF)
-    ----------------------------- */
+    /* Generic expandable cards */
     .grid{
       display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 900px){
+      .grid.two{ grid-template-columns: 1fr 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .card-btn{
+      width: 100%;
+      text-align: left;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      padding: 16px 16px;
+      cursor: pointer;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+    .card-btn small{
+      display:block;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 12px;
+    }
+    .chev{
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+      opacity: 0.85;
+    }
+    .card.open .chev{ transform: rotate(180deg); }
+
+    .card-body{
+      display:none;
+      padding: 0 16px 16px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+    .card.open .card-body{ display:block; padding-top: 12px; }
+
+    .list{ margin: 0; padding-left: 18px; color: rgba(255,255,255,0.92); }
+    .list li{ margin: 8px 0; font-size: 13px; }
+
+    /* PESTLE colour accents (optional) */
+    .p-political{ border-left: 5px solid #f59e0b; }
+    .p-economic{ border-left: 5px solid #9ca3af; }
+    .p-social{ border-left: 5px solid #ec4899; }
+    .p-tech{ border-left: 5px solid #a78bfa; }
+    .p-legal{ border-left: 5px solid #38bdf8; }
+    .p-env{ border-left: 5px solid #34d399; }
+
+    footer{
+      margin-top: 34px;
+      color: rgba(255,255,255,0.55);
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <strong>McGowan Muaythai Strategic Handbook</strong>
+        <span>Tap cards to expand. Built for phones.</span>
+      </div>
+      <nav class="nav">
+        <a href="#swot">SWOT</a>
+        <a href="#pestle">PESTLE</a>
+        <a href="#ansoff">ANSOFF</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Strategic Handbook</h1>
+      <p>SWOT → PESTLE → ANSOFF on one page, designed for a one-time live walkthrough.</p>
+    </section>
+
+    <!-- =======================
+         1) SWOT (first)
+    ======================== -->
+    <section id="swot" class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <div class="badge">📊</div>
+          <div>
+            <h2>SWOT Analysis</h2>
+            <div class="subtitle">Tap a card to expand details</div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-expand-all="swot">Expand all</button>
+          <button class="btn" data-collapse-all="swot">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="grid two" data-group="swot">
+        <!-- Paste SWOT content as cards (example placeholders) -->
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>💪 Strengths <small>Internal competitive advantages</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste your Strengths bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>⚠️ Weaknesses <small>Internal limitations</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste your Weaknesses bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🚀 Opportunities <small>External leverage points</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste your Opportunities bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🛡️ Threats <small>External risks</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste your Threats bullets here</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================
+         2) PESTLE (second)
+    ======================== -->
+    <section id="pestle" class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <div class="badge">🧭</div>
+          <div>
+            <h2>PESTLE Analysis</h2>
+            <div class="subtitle">Macro-environment factors</div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-expand-all="pestle">Expand all</button>
+          <button class="btn" data-collapse-all="pestle">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="grid" data-group="pestle">
+        <article class="card p-political">
+          <button class="card-btn" type="button">
+            <div>Political <small>Funding, policy, planning, regulation</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Political bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-economic">
+          <button class="card-btn" type="button">
+            <div>Economic <small>Spending, costs, wages, rates</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Economic bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-social">
+          <button class="card-btn" type="button">
+            <div>Social <small>Trends, demographics, community</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Social bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-tech">
+          <button class="card-btn" type="button">
+            <div>Technological <small>Platforms, streaming, AI, data</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Technological bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-legal">
+          <button class="card-btn" type="button">
+            <div>Legal <small>Employment, HSE, GDPR, safeguarding</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Legal bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card p-env">
+          <button class="card-btn" type="button">
+            <div>Environmental <small>Energy, resilience, sustainability</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Environmental bullets here</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================
+         3) ANSOFF (third)
+    ======================== -->
+    <section id="ansoff" class="section">
+      <div class="section-head">
+        <div class="section-title">
+          <div class="badge">📈</div>
+          <div>
+            <h2>ANSOFF Matrix</h2>
+            <div class="subtitle">Growth strategy quadrants</div>
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn" data-expand-all="ansoff">Expand all</button>
+          <button class="btn" data-collapse-all="ansoff">Collapse all</button>
+        </div>
+      </div>
+
+      <div class="grid two" data-group="ansoff">
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🎯 Market Penetration <small>Existing services → existing market</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Market Penetration bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🌍 Market Development <small>Existing services → new markets</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Market Development bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🛠️ Product/Service Development <small>New services → existing market</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Product/Service Development bullets here</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <button class="card-btn" type="button">
+            <div>🚀 Diversification <small>New services → new markets</small></div>
+            <span class="chev">▼</span>
+          </button>
+          <div class="card-body">
+            <ul class="list">
+              <li>Paste Diversification bullets here</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <footer>
+        Tip: Share the GitHub Pages link. People can open it on their phone and tap along as you talk.
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // Toggle a single card
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".card-btn");
+      if (!btn) return;
+
+      const card = btn.closest(".card");
+      card.classList.toggle("open");
+    });
+
+    // Expand/collapse all within a group
+    function setGroup(groupName, open) {
+      const group = document.querySelector(`[data-group="${groupName}"]`);
+      if (!group) return;
+      group.querySelectorAll(".card").forEach(card => {
+        card.classList.toggle("open", open);
+      });
+    }
+
+    document.querySelectorAll("[data-expand-all]").forEach(btn => {
+      btn.addEventListener("click", () => setGroup(btn.dataset.expandAll, true));
+    });
+    document.querySelectorAll("[data-collapse-all]").forEach(btn => {
+      btn.addEventListener("click", () => setGroup(btn.dataset.collapseAll, false));
+    });
+  </script>
+</body>
+</html>
